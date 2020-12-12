@@ -8,7 +8,6 @@ public class ContactCreationTests extends TestBase {
 
     @Test
     public void contactCreationTests() throws Exception {
-        driver.get("http://localhost/addressbook/index.php");
         goToContactForm();
         fillContactForm(
                 "John", "Robert",
