@@ -1,2 +1,4 @@
 addressbook/GroupCreationTests.java
  addressbook.GroupCreationTests
+addressbook/ContactCreationTests.java
+ addressbook.ContactCreationTests
