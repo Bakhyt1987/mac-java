@@ -1,1 +1,1 @@
-# mac-java
+# java_test
