@@ -1,4 +1,10 @@
+addressbook/GroupData.java
+ addressbook.GroupData
+addressbook/GroupDeletionTests.java
+ addressbook.GroupDeletionTests
 addressbook/GroupCreationTests.java
  addressbook.GroupCreationTests
 addressbook/ContactCreationTests.java
  addressbook.ContactCreationTests
+addressbook/TestBase.java
+ addressbook.TestBase

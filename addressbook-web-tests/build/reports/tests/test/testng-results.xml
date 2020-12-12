@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-12T18:32:36 ALMT" name="Gradle suite" finished-at="2020-12-12T18:32:41 ALMT" duration-ms="4991">
+  <suite started-at="2020-12-13T00:41:56 ALMT" name="Gradle suite" finished-at="2020-12-13T00:42:01 ALMT" duration-ms="4991">
     <groups>
     </groups>
-    <test started-at="2020-12-12T18:32:36 ALMT" name="Gradle test" finished-at="2020-12-12T18:32:41 ALMT" duration-ms="4991">
+    <test started-at="2020-12-13T00:41:56 ALMT" name="Gradle test" finished-at="2020-12-13T00:42:01 ALMT" duration-ms="4991">
       <class name="addressbook.ContactCreationTests">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:addressbook.ContactCreationTests@1fc26a77]" started-at="2020-12-12T18:32:37 ALMT" name="setUp" finished-at="2020-12-12T18:32:39 ALMT" duration-ms="2104" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:addressbook.ContactCreationTests@6de1dbb9]" started-at="2020-12-13T00:41:56 ALMT" name="setUp" finished-at="2020-12-13T00:41:58 ALMT" duration-ms="2098" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="contactCreationTests()[pri:0, instance:addressbook.ContactCreationTests@1fc26a77]" started-at="2020-12-12T18:32:39 ALMT" name="contactCreationTests" finished-at="2020-12-12T18:32:41 ALMT" duration-ms="2797" status="PASS">
+        <test-method signature="contactCreationTests()[pri:0, instance:addressbook.ContactCreationTests@6de1dbb9]" started-at="2020-12-13T00:41:58 ALMT" name="contactCreationTests" finished-at="2020-12-13T00:42:01 ALMT" duration-ms="2803" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- contactCreationTests -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:addressbook.ContactCreationTests@1fc26a77]" started-at="2020-12-12T18:32:41 ALMT" name="tearDown" finished-at="2020-12-12T18:32:41 ALMT" duration-ms="75" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:addressbook.ContactCreationTests@6de1dbb9]" started-at="2020-12-13T00:42:01 ALMT" name="tearDown" finished-at="2020-12-13T00:42:01 ALMT" duration-ms="74" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
