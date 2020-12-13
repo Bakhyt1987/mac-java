@@ -1,4 +1,4 @@
-package addressbook;
+package addressbook.tests;
 
 
 import org.testng.annotations.Test;
@@ -8,8 +8,8 @@ public class ContactCreationTests extends TestBase {
 
     @Test
     public void contactCreationTests() throws Exception {
-        goToContactForm();
-        fillContactForm(
+        app.goToContactForm();
+        app.fillContactForm(
                 "John", "Robert",
                 "Lennon", "Jerk",
                 "Big Boss", "Kuderina street",
@@ -17,8 +17,8 @@ public class ContactCreationTests extends TestBase {
                 "5553434", "b-root@list.ru",
                 "b-root@mail.ru", "b-root@gmail.com",
                 "b.com", "13", "July", "1987");
-        submitContactCreation();
-        returnToHomePage();
+        app.submitContactCreation();
+        app.returnToHomePage();
     }
 
 

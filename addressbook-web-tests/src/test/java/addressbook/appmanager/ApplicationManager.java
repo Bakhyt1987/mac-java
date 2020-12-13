@@ -1,20 +1,17 @@
-package addressbook;
+package addressbook.appmanager;
 
+import addressbook.model.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 
 import java.util.concurrent.TimeUnit;
 
-public class TestBase {
-
+public class ApplicationManager {
     public WebDriver driver;
 
-    @BeforeClass(alwaysRun = true)
-    public void setUp() throws Exception {
+    public void init() {
         System.setProperty("webdriver.chrome.driver",
                 "/Users/bakhyt/Documents/GitHub/mac-java/addressbook-web-tests/browsers/chromedriver");
         driver = new ChromeDriver();
@@ -126,10 +123,8 @@ public class TestBase {
         driver.findElement(By.linkText("add new")).click();
     }
 
-    @AfterClass(alwaysRun = true)
-    public void tearDown() throws Exception {
+    public void stop() {
         driver.quit();
-
     }
 
     public void deleteSelectedGroup() {

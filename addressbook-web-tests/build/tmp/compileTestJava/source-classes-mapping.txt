@@ -6,5 +6,7 @@ addressbook/GroupCreationTests.java
  addressbook.GroupCreationTests
 addressbook/ContactCreationTests.java
  addressbook.ContactCreationTests
+addressbook/ApplicationManager.java
+ addressbook.ApplicationManager
 addressbook/TestBase.java
  addressbook.TestBase
