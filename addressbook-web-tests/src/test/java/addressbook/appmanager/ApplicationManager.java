@@ -1,9 +1,7 @@
 package addressbook.appmanager;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,6 +11,8 @@ public class ApplicationManager {
     public SessionHelper sessionHelper;
     public NavigationHelper navigationHelper;
     public GroupHelper groupHelper;
+
+
 
     public static boolean isAlertPresent(ChromeDriver driver) {
         try {

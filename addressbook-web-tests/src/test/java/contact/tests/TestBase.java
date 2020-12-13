@@ -1,12 +1,12 @@
 package contact.tests;
 
-import addressbook.appmanager.ApplicationManager;
+import contact.appmanager.ApplicationManager;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public class TestBase {
 
-    public final ApplicationManager app = new ApplicationManager();
+    public ApplicationManager app = new ApplicationManager();
 
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
