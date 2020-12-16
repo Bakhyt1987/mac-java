@@ -1,18 +1,22 @@
 apply plugin: 'java'
 apply plugin: 'application'
-mainClassName = "MyFirstProgram"
 
 
 
 repositories {
     mavenCentral()
 }
+
 dependencies {
     implementation 'org.testng:testng:7.1.0'
 }
 
 test {
-    useTestNG()
+    useTestNG(){
+        useDefaultListeners = true
+    }
+    testLogging {
+        events "PASSED", "FAILED", "SKIPPED"
+    }
 }
 
- 

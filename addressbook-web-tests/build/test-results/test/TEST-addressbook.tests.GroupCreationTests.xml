@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="addressbook.tests.GroupCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-16T20:37:46" hostname="Bakhyts-Mac-mini.local" time="0.983">
+  <properties/>
+  <testcase name="groupCreationTests" classname="addressbook.tests.GroupCreationTests" time="0.983"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[1608151060563	geckodriver	INFO	Listening on 127.0.0.1:43115
+1608151060689	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/vt/prlrhqtj5r99wmdt3flcvx500000gn/T/rust_mozprofilejsw3VM"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1608151065542	Marionette	INFO	Listening on port 61925
+1608151065613	Marionette	WARN	TLS certificate errors will be ignored for this session
+Dec 17, 2020 2:37:45 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

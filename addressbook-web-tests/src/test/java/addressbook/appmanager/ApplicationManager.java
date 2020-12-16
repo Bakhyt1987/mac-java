@@ -1,18 +1,25 @@
 package addressbook.appmanager;
 
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.BrowserType;
 
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
-    public ChromeDriver driver;
+    private final String browser;
+    public WebDriver driver;
 
     public SessionHelper sessionHelper;
     public NavigationHelper navigationHelper;
     public GroupHelper groupHelper;
 
-
+    public ApplicationManager(String browser) {
+        this.browser = browser;
+    }
 
     public static boolean isAlertPresent(ChromeDriver driver) {
         try {
@@ -24,9 +31,20 @@ public class ApplicationManager {
     }
 
     public void init() {
-        System.setProperty("webdriver.chrome.driver",
-                "/Users/bakhyt/Documents/GitHub/mac-java/addressbook-web-tests/browsers/chromedriver");
-        driver = new ChromeDriver();
+        if (browser == BrowserType.FIREFOX) {
+            System.setProperty("webdriver.gecko.driver",
+                    "/Users/bakhyt/Documents/GitHub/mac-java/addressbook-web-tests/browsers/geckodriver");
+            driver = new FirefoxDriver();
+        } else if (browser == BrowserType.CHROME) {
+            System.setProperty("webdriver.chrome.driver",
+                    "/Users/bakhyt/Documents/GitHub/mac-java/addressbook-web-tests/browsers/chromedriver");
+            driver = new ChromeDriver();
+        } else if (browser == BrowserType.EDGE) {
+            System.setProperty("webdriver.edge.driver",
+                    "/Users/bakhyt/Documents/GitHub/mac-java/addressbook-web-tests/browsers/msedgedriver");
+            driver = new EdgeDriver();
+        }
+
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get("http://localhost/addressbook/index.php");
         groupHelper = new GroupHelper(driver);
@@ -34,10 +52,6 @@ public class ApplicationManager {
         sessionHelper = new SessionHelper(driver);
         sessionHelper.login("admin", "secret");
     }
-
-
-
-
 
 
     public void stop() {

@@ -1,2 +1,4 @@
-Sandbox/SquareTests.java
- Sandbox.SquareTests
+com/baha/EquationTests.java
+ com.baha.EquationTests
+com/baha/SquareTests.java
+ com.baha.SquareTests
