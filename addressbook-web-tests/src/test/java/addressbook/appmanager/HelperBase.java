@@ -2,6 +2,7 @@ package addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -35,4 +36,15 @@ public class HelperBase {
             return false;
         }
     }
+
+    protected boolean isElementPresent(By locator) {
+        try{
+            driver.findElement(locator);
+            return true;
+        } catch (NoSuchElementException ex){
+            return false;
+        }
+
+
+}
 }
