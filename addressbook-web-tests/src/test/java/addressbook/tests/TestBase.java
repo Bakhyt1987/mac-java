@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 
 public class TestBase {
 
-    public final ApplicationManager app = new ApplicationManager(BrowserType.FIREFOX);
+    public final ApplicationManager app = new ApplicationManager(BrowserType.CHROME);
 
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
@@ -19,5 +19,7 @@ public class TestBase {
         app.stop();
 
     }
+
+
 
 }

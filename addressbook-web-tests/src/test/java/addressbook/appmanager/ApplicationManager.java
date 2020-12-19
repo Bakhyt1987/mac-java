@@ -1,6 +1,5 @@
 package addressbook.appmanager;
 
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -21,25 +20,18 @@ public class ApplicationManager {
         this.browser = browser;
     }
 
-    public static boolean isAlertPresent(ChromeDriver driver) {
-        try {
-            driver.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
-    }
+
 
     public void init() {
-        if (browser == BrowserType.FIREFOX) {
+        if (browser.equals(BrowserType.FIREFOX)) {
             System.setProperty("webdriver.gecko.driver",
                     "/Users/bakhyt/Documents/GitHub/mac-java/addressbook-web-tests/browsers/geckodriver");
             driver = new FirefoxDriver();
-        } else if (browser == BrowserType.CHROME) {
+        } else if (browser.equals(BrowserType.CHROME)) {
             System.setProperty("webdriver.chrome.driver",
                     "/Users/bakhyt/Documents/GitHub/mac-java/addressbook-web-tests/browsers/chromedriver");
             driver = new ChromeDriver();
-        } else if (browser == BrowserType.EDGE) {
+        } else if (browser.equals(BrowserType.EDGE)) {
             System.setProperty("webdriver.edge.driver",
                     "/Users/bakhyt/Documents/GitHub/mac-java/addressbook-web-tests/browsers/msedgedriver");
             driver = new EdgeDriver();
