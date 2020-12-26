@@ -12,10 +12,18 @@ public class NavigationHelper extends HelperBase {
 
 
     public void goToContactForm() {
-        click(By.linkText("add new"));
+        if (isElementPresent(By.tagName("h1"))
+                && driver.findElement(By.tagName("h1")).getText().equals("Edit / add address book entry")
+                && isElementPresent(By.name("submit")))
+            return;
+        {
+            click(By.linkText("add new"));
+        }
     }
-
     public void gotoHomePage() {
+        if(isElementPresent(By.id("maintable"))){
+            return;
+        }
         click(By.linkText("home"));
     }
 }

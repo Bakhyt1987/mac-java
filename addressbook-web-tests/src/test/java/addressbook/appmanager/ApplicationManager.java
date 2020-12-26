@@ -37,7 +37,7 @@ public class ApplicationManager {
             driver = new EdgeDriver();
         }
 
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.get("http://localhost/addressbook/index.php");
         groupHelper = new GroupHelper(driver);
         navigationHelper = new NavigationHelper(driver);

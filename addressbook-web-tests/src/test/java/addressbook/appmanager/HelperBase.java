@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class HelperBase {
     public WebDriver driver;
@@ -28,7 +27,7 @@ public class HelperBase {
         }
     }
 
-    public boolean isAlertPresent(ChromeDriver driver) {
+    public boolean isAlertPresent(WebDriver driver) {
         try {
             driver.switchTo().alert();
             return true;
