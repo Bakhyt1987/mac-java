@@ -22,7 +22,7 @@ public class HelperBase {
         driver.findElement(locator).sendKeys(text);
     }
 
-    public  boolean isAlertPresent() {
+    public boolean isAlertPresent() {
         try {
             driver.switchTo().alert();
             return true;
@@ -32,10 +32,10 @@ public class HelperBase {
     }
 
     protected boolean isElementPresent(By locator) {
-        try{
+        try {
             driver.findElement(locator);
             return true;
-        } catch (NoSuchElementException ex){
+        } catch (NoSuchElementException ex) {
             return false;
         }
 

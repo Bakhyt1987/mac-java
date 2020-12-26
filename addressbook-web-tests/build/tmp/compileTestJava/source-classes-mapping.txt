@@ -1,11 +1,13 @@
 addressbook/model/GroupData.java
  addressbook.model.GroupData
-contact/appmanager/HelperBase.java
- contact.appmanager.HelperBase
-contact/appmanager/SessionHelper.java
- contact.appmanager.SessionHelper
-contact/appmanager/NavigationHelper.java
- contact.appmanager.NavigationHelper
+addressbook/appmanager/HelperBase.java
+ addressbook.appmanager.HelperBase
+contact/model/ContactData.java
+ contact.model.ContactData
+addressbook/appmanager/SessionHelper.java
+ addressbook.appmanager.SessionHelper
+addressbook/appmanager/GroupHelper.java
+ addressbook.appmanager.GroupHelper
 contact/tests/TestBase.java
  contact.tests.TestBase
 contact/appmanager/ContactHelper.java
@@ -14,20 +16,18 @@ addressbook/appmanager/NavigationHelper.java
  addressbook.appmanager.NavigationHelper
 addressbook/tests/GroupCreationTests.java
  addressbook.tests.GroupCreationTests
-addressbook/appmanager/GroupHelper.java
- addressbook.appmanager.GroupHelper
-contact/model/ContactData.java
- contact.model.ContactData
+contact/appmanager/HelperBase.java
+ contact.appmanager.HelperBase
 contact/appmanager/ApplicationManager.java
  contact.appmanager.ApplicationManager
 contact/tests/ContactModificationTests.java
  contact.tests.ContactModificationTests
-addressbook/appmanager/SessionHelper.java
- addressbook.appmanager.SessionHelper
 addressbook/tests/TestBase.java
  addressbook.tests.TestBase
-addressbook/appmanager/HelperBase.java
- addressbook.appmanager.HelperBase
+contact/appmanager/NavigationHelper.java
+ contact.appmanager.NavigationHelper
+contact/appmanager/SessionHelper.java
+ contact.appmanager.SessionHelper
 addressbook/tests/GroupModificationTests.java
  addressbook.tests.GroupModificationTests
 addressbook/tests/GroupDeletionTests.java
