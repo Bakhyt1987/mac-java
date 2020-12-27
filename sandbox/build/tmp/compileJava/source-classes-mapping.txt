@@ -1,5 +1,7 @@
 com/baha/Rectangle.java
  com.baha.Rectangle
+com/baha/Primes.java
+ com.baha.Primes
 com/baha/Square.java
  com.baha.Square
 com/baha/Equation.java

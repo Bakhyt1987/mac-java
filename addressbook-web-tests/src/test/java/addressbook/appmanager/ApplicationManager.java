@@ -6,8 +6,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
 
-import java.util.concurrent.TimeUnit;
-
 public class ApplicationManager {
     private final String browser;
     public WebDriver driver;
@@ -19,7 +17,6 @@ public class ApplicationManager {
     public ApplicationManager(String browser) {
         this.browser = browser;
     }
-
 
 
     public void init() {
@@ -36,8 +33,6 @@ public class ApplicationManager {
                     "/Users/bakhyt/Documents/GitHub/mac-java/addressbook-web-tests/browsers/msedgedriver");
             driver = new EdgeDriver();
         }
-
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.get("http://localhost/addressbook/index.php");
         groupHelper = new GroupHelper(driver);
         navigationHelper = new NavigationHelper(driver);

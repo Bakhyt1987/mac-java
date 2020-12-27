@@ -1,4 +1,6 @@
-com/baha/EquationTests.java
- com.baha.EquationTests
 com/baha/SquareTests.java
  com.baha.SquareTests
+com/baha/EquationTests.java
+ com.baha.EquationTests
+com/baha/PrimeTests.java
+ com.baha.PrimeTests
