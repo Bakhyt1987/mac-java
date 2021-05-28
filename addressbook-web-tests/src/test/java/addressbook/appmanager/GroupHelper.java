@@ -79,7 +79,7 @@ public class GroupHelper extends HelperBase {
         click(By.xpath("(//input[@name='update'])[2]"));
     }
 
-    public void createGroup(GroupData group) {
+    public void create(GroupData group) {
         initGroupCreation();
         fillGroupForm(group);
         submitGroupCreation();
@@ -87,12 +87,20 @@ public class GroupHelper extends HelperBase {
 
     }
 
-    public void createContact(ContactData contact) {
-        goToContactCreationForm();
-        fillContactForm(new ContactData(contact.getFirstname(), contact.getLastname(), contact.getGroup()),true);
-        submitContactCreation();
-
+    public void modify(int index, GroupData group) {
+        selectGroup(index);
+        initGroupModification();
+        fillGroupForm(group);
+        submitGroupModification();
+        returnToGroupPage();
     }
+
+    public void delete(int index) {
+        selectGroup(index);
+        deleteSelectedGroup();
+        returnToGroupPage();
+    }
+
 
     public boolean isThereAGroup() {
         return isElementPresent(By.name("selected[]"));
@@ -102,10 +110,12 @@ public class GroupHelper extends HelperBase {
         return isElementPresent(By.name("selected[]"));
     }
 
-    public void GroupModification(GroupData group) {
-        initGroupModification();
-        //fillGroupForm(new GroupData(group.getName(), group.getHeader(), group.getFooter()));
-        submitGroupModification();
+
+
+    public void createContact(ContactData contact) {
+        goToContactCreationForm();
+        fillContactForm(new ContactData(contact.getFirstname(), contact.getLastname(), contact.getGroup()),true);
+        submitContactCreation();
 
     }
 
@@ -115,6 +125,7 @@ public class GroupHelper extends HelperBase {
         fillContactModification(new ContactData(contact.getFirstname(), contact.getLastname(), contact.getGroup()),false);
         submitContactModification();
     }
+
 
     public void goToContactCreationForm() {
         click(By.linkText("add new"));
@@ -148,7 +159,7 @@ public class GroupHelper extends HelperBase {
         return driver.findElements(By.name("selected[]")).size();
     }
 
-    public List<GroupData> getGroupList() {
+    public List<GroupData> list() {
         List<GroupData> groups = new ArrayList<GroupData>();
         List<WebElement> elements = driver.findElements(By.cssSelector("span.group"));
         for(WebElement element: elements) {

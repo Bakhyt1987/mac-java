@@ -1,25 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="15" total="18" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-05-29T02:17:58 ALMT" name="Gradle suite" finished-at="2021-05-29T02:18:05 ALMT" duration-ms="6954">
+  <suite started-at="2021-05-29T03:00:25 ALMT" name="Gradle suite" finished-at="2021-05-29T03:00:29 ALMT" duration-ms="4360">
     <groups>
     </groups>
-    <test started-at="2021-05-29T02:17:58 ALMT" name="Gradle test" finished-at="2021-05-29T02:18:05 ALMT" duration-ms="6954">
+    <test started-at="2021-05-29T03:00:25 ALMT" name="Gradle test" finished-at="2021-05-29T03:00:29 ALMT" duration-ms="4360">
       <class name="addressbook.tests.GroupCreationTests">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:addressbook.tests.GroupCreationTests@315d25ba]" started-at="2021-05-29T02:17:58 ALMT" name="setUp" finished-at="2021-05-29T02:18:03 ALMT" duration-ms="4748" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="testGroupCreation()[pri:0, instance:addressbook.tests.GroupCreationTests@315d25ba]" started-at="2021-05-29T02:18:03 ALMT" name="testGroupCreation" finished-at="2021-05-29T02:18:05 ALMT" duration-ms="1613" status="PASS">
+        <test-method signature="testGroupCreation()[pri:0, instance:addressbook.tests.GroupCreationTests@16c6982a]" started-at="2021-05-29T03:00:25 ALMT" name="testGroupCreation" finished-at="2021-05-29T03:00:26 ALMT" duration-ms="1660" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGroupCreation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:addressbook.tests.GroupCreationTests@315d25ba]" started-at="2021-05-29T02:18:05 ALMT" name="tearDown" finished-at="2021-05-29T02:18:05 ALMT" duration-ms="568" status="PASS">
+      </class> <!-- addressbook.tests.GroupCreationTests -->
+      <class name="addressbook.tests.GroupDeletionTests">
+        <test-method signature="testGroupDeletion()[pri:0, instance:addressbook.tests.GroupDeletionTests@3e6ab93]" started-at="2021-05-29T03:00:26 ALMT" name="testGroupDeletion" finished-at="2021-05-29T03:00:27 ALMT" duration-ms="939" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGroupDeletion -->
+      </class> <!-- addressbook.tests.GroupDeletionTests -->
+      <class name="addressbook.tests.GroupModificationTests">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:addressbook.tests.GroupModificationTests@1bfd5e1a]" started-at="2021-05-29T03:00:20 ALMT" name="setUp" finished-at="2021-05-29T03:00:25 ALMT" duration-ms="4223" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testGroupModification()[pri:0, instance:addressbook.tests.GroupModificationTests@1bfd5e1a]" started-at="2021-05-29T03:00:27 ALMT" name="testGroupModification" finished-at="2021-05-29T03:00:29 ALMT" duration-ms="1736" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGroupModification -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:addressbook.tests.GroupModificationTests@1bfd5e1a]" started-at="2021-05-29T03:00:29 ALMT" name="tearDown" finished-at="2021-05-29T03:00:30 ALMT" duration-ms="561" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- addressbook.tests.GroupCreationTests -->
+      </class> <!-- addressbook.tests.GroupModificationTests -->
     </test> <!-- Gradle test -->
   </suite> <!-- Gradle suite -->
 </testng-results>

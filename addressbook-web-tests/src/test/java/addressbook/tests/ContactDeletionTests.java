@@ -6,13 +6,13 @@ import org.testng.annotations.Test;
 public class ContactDeletionTests extends TestBase{
 
 
-    @Test
+    @Test (enabled = false)
     public void contactDeletionTests(){
-        if(!app.getGroupHelper().isThereAContact()){
-            app.getGroupHelper().createContact(new ContactData("RON", null, null));
+        if(!app.group().isThereAContact()){
+            app.group().createContact(new ContactData("RON", null, null));
         }
-        app.getGroupHelper().selectContact();
-        app.getGroupHelper().deleteSelectedContact();
-        app.getNavigationHelper().returnToHomePage();
+        app.group().selectContact();
+        app.group().deleteSelectedContact();
+        app.goTo().returnToHomePage();
     }
 }

@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-27T01:48:20 ALMT" name="Gradle suite" finished-at="2020-12-27T01:48:25 ALMT" duration-ms="4904">
+  <suite started-at="2021-05-23T21:09:00 ALMT" name="Gradle suite" finished-at="2021-05-23T21:09:00 ALMT" duration-ms="26">
     <groups>
     </groups>
-    <test started-at="2020-12-27T01:48:20 ALMT" name="Gradle test" finished-at="2020-12-27T01:48:25 ALMT" duration-ms="4904">
+    <test started-at="2021-05-23T21:09:00 ALMT" name="Gradle test" finished-at="2021-05-23T21:09:00 ALMT" duration-ms="26">
       <class name="com.baha.PrimeTests">
-        <test-method signature="testPrimes()[pri:0, instance:com.baha.PrimeTests@9d4e80c]" started-at="2020-12-27T01:48:20 ALMT" name="testPrimes" finished-at="2020-12-27T01:48:25 ALMT" duration-ms="4881" status="PASS">
+        <test-method signature="testPrime()[pri:0, instance:com.baha.PrimeTests@2b28a14e]" started-at="2021-05-23T21:09:00 ALMT" name="testPrime" finished-at="2021-05-23T21:09:00 ALMT" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testPrimes -->
-        <test-method signature="testPrimes2()[pri:0, instance:com.baha.PrimeTests@9d4e80c]" started-at="2020-12-27T01:48:25 ALMT" name="testPrimes2" finished-at="2020-12-27T01:48:25 ALMT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testPrimes2 -->
+        </test-method> <!-- testPrime -->
       </class> <!-- com.baha.PrimeTests -->
     </test> <!-- Gradle test -->
   </suite> <!-- Gradle suite -->

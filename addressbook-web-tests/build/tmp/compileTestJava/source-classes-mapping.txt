@@ -12,10 +12,10 @@ addressbook/model/GroupData.java
  addressbook.model.GroupData
 addressbook/tests/ContactCreationTests.java
  addressbook.tests.ContactCreationTests
-addressbook/tests/GroupModificationTests.java
- addressbook.tests.GroupModificationTests
 addressbook/appmanager/ApplicationManager.java
  addressbook.appmanager.ApplicationManager
+addressbook/tests/GroupCreationTests.java
+ addressbook.tests.GroupCreationTests
 addressbook/tests/ContactDeletionTests.java
  addressbook.tests.ContactDeletionTests
 addressbook/appmanager/GroupHelper.java
@@ -24,5 +24,5 @@ addressbook/tests/ContactModificationTests.java
  addressbook.tests.ContactModificationTests
 addressbook/tests/GroupDeletionTests.java
  addressbook.tests.GroupDeletionTests
-addressbook/tests/GroupCreationTests.java
- addressbook.tests.GroupCreationTests
+addressbook/tests/GroupModificationTests.java
+ addressbook.tests.GroupModificationTests

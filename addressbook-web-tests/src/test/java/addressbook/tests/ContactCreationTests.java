@@ -5,9 +5,9 @@ import org.testng.annotations.Test;
 
 public class ContactCreationTests extends TestBase {
 
-    @Test
+    @Test (enabled = false)
     public void contactCreationTests() {
-        app.getGroupHelper().createContact(new ContactData("rrr",  "sss", "Bob"));
-        app.getNavigationHelper().returnToHomePage();
+        app.group().createContact(new ContactData("rrr",  "sss", "Bob"));
+        app.goTo().returnToHomePage();
     }
 }
