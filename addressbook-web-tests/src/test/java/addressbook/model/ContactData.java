@@ -1,15 +1,15 @@
 package addressbook.model;
 
 public class ContactData {
+
     private final String firstname;
     private final String lastname;
-    private final String company;
+    private final String group;
 
-
-    public ContactData(String firstname, String lastname, String company) {
+    public ContactData(String firstname, String lastname, String group) {
         this.firstname = firstname;
         this.lastname = lastname;
-        this.company = company;
+        this.group = group;
     }
 
     public String getFirstname() {
@@ -20,8 +20,8 @@ public class ContactData {
         return lastname;
     }
 
-    public String getCompany() {
-        return company;
+    public String getGroup() {
+        return group;
     }
 
 }

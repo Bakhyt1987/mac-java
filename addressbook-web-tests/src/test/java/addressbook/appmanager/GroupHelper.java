@@ -6,6 +6,12 @@ import net.bytebuddy.agent.builder.AgentBuilder;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GroupHelper extends HelperBase {
 
@@ -16,8 +22,6 @@ public class GroupHelper extends HelperBase {
     public void returnToGroupPage() {
         click(By.linkText("group page"));
     }
-
-
 
     public void submitGroupCreation() {
         click(By.name("submit"));
@@ -51,8 +55,8 @@ public class GroupHelper extends HelperBase {
         return null;
     }
 
-    public void selectGroup() {
-        click(By.name("selected[]"));
+    public void selectGroup(int index) {
+        driver.findElements(By.name("selected[]")).get(index).click();
     }
 
     public void selectContact() {
@@ -74,9 +78,10 @@ public class GroupHelper extends HelperBase {
     public void submitContactModification() {
         click(By.xpath("(//input[@name='update'])[2]"));
     }
+
     public void createGroup(GroupData group) {
         initGroupCreation();
-        fillGroupForm(new GroupData("RON", null, null));
+        fillGroupForm(group);
         submitGroupCreation();
         returnToGroupPage();
 
@@ -84,7 +89,7 @@ public class GroupHelper extends HelperBase {
 
     public void createContact(ContactData contact) {
         goToContactCreationForm();
-        fillContactForm(new ContactData("rrr", null, null));
+        fillContactForm(new ContactData(contact.getFirstname(), contact.getLastname(), contact.getGroup()),true);
         submitContactCreation();
 
     }
@@ -96,10 +101,10 @@ public class GroupHelper extends HelperBase {
     public boolean isThereAContact() {
         return isElementPresent(By.name("selected[]"));
     }
+
     public void GroupModification(GroupData group) {
-        selectGroup();
         initGroupModification();
-        fillGroupForm(new GroupData("Gyle", "Tony", "Trey"));
+        //fillGroupForm(new GroupData(group.getName(), group.getHeader(), group.getFooter()));
         submitGroupModification();
 
     }
@@ -107,7 +112,7 @@ public class GroupHelper extends HelperBase {
     public void ContactModification(ContactData contact) {
         selectContact();
         initContactModification();
-        fillContactModification(new ContactData("2222", null, null));
+        fillContactModification(new ContactData(contact.getFirstname(), contact.getLastname(), contact.getGroup()),false);
         submitContactModification();
     }
 
@@ -115,21 +120,43 @@ public class GroupHelper extends HelperBase {
         click(By.linkText("add new"));
     }
 
-
-    public void fillContactForm(ContactData contactData) {
+    public void fillContactForm(ContactData contactData, boolean creation) {
         type(By.name("firstname"), contactData.getFirstname());
         type(By.name("lastname"), contactData.getLastname());
-        type(By.name("company"), contactData.getCompany());
+        
+        if (creation) {
+            new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+        } else {
+            Assert.assertFalse(isElementPresent(By.name("new_group")));
+        }
+
+    }
+
+    public void fillContactModification(ContactData contactData, boolean creation) {
+        type(By.name("firstname"), contactData.getFirstname());
+        type(By.name("lastname"), contactData.getLastname());
+
+        if (creation) {
+            new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+        } else {
+            Assert.assertFalse(isElementPresent(By.name("new_group")));
+        }
     }
 
 
-
-    public void fillContactModification(ContactData contactData) {
-        type(By.name("firstname"), contactData.getFirstname());
-        type(By.name("lastname"), contactData.getLastname());
-        type(By.name("company"), contactData.getCompany());
+    public int getGroupCount() {
+        return driver.findElements(By.name("selected[]")).size();
     }
 
-
-
+    public List<GroupData> getGroupList() {
+        List<GroupData> groups = new ArrayList<GroupData>();
+        List<WebElement> elements = driver.findElements(By.cssSelector("span.group"));
+        for(WebElement element: elements) {
+            String name = element.getText();
+            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+            GroupData group = new GroupData(id, name,null,null);
+            groups.add(group);
+        }
+        return groups;
+    }
 }
