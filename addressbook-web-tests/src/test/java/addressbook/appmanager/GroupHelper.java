@@ -10,8 +10,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class GroupHelper extends HelperBase {
 
@@ -59,6 +60,11 @@ public class GroupHelper extends HelperBase {
         driver.findElements(By.name("selected[]")).get(index).click();
     }
 
+    public void selectGroupById(int id) {
+        driver.findElement(By.cssSelector("input[value='" + id + "']")).click();
+    }
+
+
     public void selectContact() {
         click(By.name("selected[]"));
     }
@@ -87,16 +93,16 @@ public class GroupHelper extends HelperBase {
 
     }
 
-    public void modify(int index, GroupData group) {
-        selectGroup(index);
+    public void modify(GroupData group) {
+        selectGroupById(group.getId());
         initGroupModification();
         fillGroupForm(group);
         submitGroupModification();
         returnToGroupPage();
     }
 
-    public void delete(int index) {
-        selectGroup(index);
+    public void delete(GroupData group) {
+        selectGroupById(group.getId());
         deleteSelectedGroup();
         returnToGroupPage();
     }
@@ -111,10 +117,9 @@ public class GroupHelper extends HelperBase {
     }
 
 
-
     public void createContact(ContactData contact) {
         goToContactCreationForm();
-        fillContactForm(new ContactData(contact.getFirstname(), contact.getLastname(), contact.getGroup()),true);
+        fillContactForm(new ContactData(contact.getFirstname(), contact.getLastname(), contact.getGroup()), true);
         submitContactCreation();
 
     }
@@ -122,7 +127,7 @@ public class GroupHelper extends HelperBase {
     public void ContactModification(ContactData contact) {
         selectContact();
         initContactModification();
-        fillContactModification(new ContactData(contact.getFirstname(), contact.getLastname(), contact.getGroup()),false);
+        fillContactModification(new ContactData(contact.getFirstname(), contact.getLastname(), contact.getGroup()), false);
         submitContactModification();
     }
 
@@ -134,7 +139,7 @@ public class GroupHelper extends HelperBase {
     public void fillContactForm(ContactData contactData, boolean creation) {
         type(By.name("firstname"), contactData.getFirstname());
         type(By.name("lastname"), contactData.getLastname());
-        
+
         if (creation) {
             new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
         } else {
@@ -154,19 +159,16 @@ public class GroupHelper extends HelperBase {
         }
     }
 
-
-    public int getGroupCount() {
-        return driver.findElements(By.name("selected[]")).size();
-    }
-
-    public List<GroupData> list() {
-        List<GroupData> groups = new ArrayList<GroupData>();
+    public Set<GroupData> all() {
+        Set<GroupData> groups = new HashSet<GroupData>();
         List<WebElement> elements = driver.findElements(By.cssSelector("span.group"));
-        for(WebElement element: elements) {
+        for (WebElement element : elements) {
             String name = element.getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             groups.add(new GroupData().withId(id).withName(name));
         }
         return groups;
     }
+
+
 }
