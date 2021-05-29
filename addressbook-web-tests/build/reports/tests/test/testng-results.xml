@@ -2,35 +2,43 @@
 <testng-results ignored="15" total="18" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-05-29T03:00:25 ALMT" name="Gradle suite" finished-at="2021-05-29T03:00:29 ALMT" duration-ms="4360">
+  <suite started-at="2021-05-29T16:36:18 ALMT" name="Gradle suite" finished-at="2021-05-29T16:36:22 ALMT" duration-ms="4612">
     <groups>
     </groups>
-    <test started-at="2021-05-29T03:00:25 ALMT" name="Gradle test" finished-at="2021-05-29T03:00:29 ALMT" duration-ms="4360">
+    <test started-at="2021-05-29T16:36:18 ALMT" name="Gradle test" finished-at="2021-05-29T16:36:22 ALMT" duration-ms="4612">
       <class name="addressbook.tests.GroupCreationTests">
-        <test-method signature="testGroupCreation()[pri:0, instance:addressbook.tests.GroupCreationTests@16c6982a]" started-at="2021-05-29T03:00:25 ALMT" name="testGroupCreation" finished-at="2021-05-29T03:00:26 ALMT" duration-ms="1660" status="PASS">
+        <test-method signature="testGroupCreation()[pri:0, instance:addressbook.tests.GroupCreationTests@6ec7ac12]" started-at="2021-05-29T16:36:18 ALMT" name="testGroupCreation" finished-at="2021-05-29T16:36:19 ALMT" duration-ms="1586" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGroupCreation -->
       </class> <!-- addressbook.tests.GroupCreationTests -->
       <class name="addressbook.tests.GroupDeletionTests">
-        <test-method signature="testGroupDeletion()[pri:0, instance:addressbook.tests.GroupDeletionTests@3e6ab93]" started-at="2021-05-29T03:00:26 ALMT" name="testGroupDeletion" finished-at="2021-05-29T03:00:27 ALMT" duration-ms="939" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGroupDeletion -->
-      </class> <!-- addressbook.tests.GroupDeletionTests -->
-      <class name="addressbook.tests.GroupModificationTests">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:addressbook.tests.GroupModificationTests@1bfd5e1a]" started-at="2021-05-29T03:00:20 ALMT" name="setUp" finished-at="2021-05-29T03:00:25 ALMT" duration-ms="4223" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:addressbook.tests.GroupDeletionTests@19111377]" started-at="2021-05-29T16:36:12 ALMT" name="setUp" finished-at="2021-05-29T16:36:18 ALMT" duration-ms="5579" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testGroupModification()[pri:0, instance:addressbook.tests.GroupModificationTests@1bfd5e1a]" started-at="2021-05-29T03:00:27 ALMT" name="testGroupModification" finished-at="2021-05-29T03:00:29 ALMT" duration-ms="1736" status="PASS">
+        <test-method is-config="true" signature="ensurePreconditions()[pri:0, instance:addressbook.tests.GroupDeletionTests@19111377]" started-at="2021-05-29T16:36:19 ALMT" name="ensurePreconditions" finished-at="2021-05-29T16:36:20 ALMT" duration-ms="336" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGroupModification -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:addressbook.tests.GroupModificationTests@1bfd5e1a]" started-at="2021-05-29T03:00:29 ALMT" name="tearDown" finished-at="2021-05-29T03:00:30 ALMT" duration-ms="561" status="PASS">
+        </test-method> <!-- ensurePreconditions -->
+        <test-method signature="testGroupDeletion()[pri:0, instance:addressbook.tests.GroupDeletionTests@19111377]" started-at="2021-05-29T16:36:20 ALMT" name="testGroupDeletion" finished-at="2021-05-29T16:36:20 ALMT" duration-ms="789" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGroupDeletion -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:addressbook.tests.GroupDeletionTests@19111377]" started-at="2021-05-29T16:36:23 ALMT" name="tearDown" finished-at="2021-05-29T16:36:23 ALMT" duration-ms="555" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
+      </class> <!-- addressbook.tests.GroupDeletionTests -->
+      <class name="addressbook.tests.GroupModificationTests">
+        <test-method is-config="true" signature="ensurePreconditions()[pri:0, instance:addressbook.tests.GroupModificationTests@72324810]" started-at="2021-05-29T16:36:20 ALMT" name="ensurePreconditions" finished-at="2021-05-29T16:36:21 ALMT" duration-ms="299" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ensurePreconditions -->
+        <test-method signature="testGroupModification()[pri:0, instance:addressbook.tests.GroupModificationTests@72324810]" started-at="2021-05-29T16:36:21 ALMT" name="testGroupModification" finished-at="2021-05-29T16:36:22 ALMT" duration-ms="1579" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGroupModification -->
       </class> <!-- addressbook.tests.GroupModificationTests -->
     </test> <!-- Gradle test -->
   </suite> <!-- Gradle suite -->
