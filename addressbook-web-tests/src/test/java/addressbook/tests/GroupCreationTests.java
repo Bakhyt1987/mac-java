@@ -1,9 +1,8 @@
 package addressbook.tests;
 
 import addressbook.model.GroupData;
+import addressbook.model.Groups;
 import org.testng.annotations.Test;
-
-import java.util.Set;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -12,17 +11,26 @@ public class GroupCreationTests extends TestBase {
 
 
     @Test
-    public void testGroupCreation() throws Exception {
+    public void testGroupCreation()  {
         app.goTo().GroupPage();
-        Set<GroupData> before = app.group().all();
-        GroupData group = new GroupData().withName("test2");
+        Groups before = app.group().all();
+        GroupData group = new GroupData().withName("test23354");
         app.group().create(group);
-        Set<GroupData> after = app.group().all();
-        assertThat(after.size(), equalTo(before.size() + 1));
+        assertThat(app.group().count(), equalTo(before.size() + 1));
+        Groups after = app.group().all();
+        assertThat(after, equalTo(
+                before.withAdded(group.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
+    }
 
-        group.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt());
-        before.add(group);
-        assertThat(after, equalTo(before.withAdded(group)));
+    @Test
+    public void testBadGroupCreation() {
+        app.goTo().GroupPage();
+        Groups before = app.group().all();
+        GroupData group = new GroupData().withName("test23354'");
+        app.group().create(group);
+        assertThat(app.group().count(), equalTo(before.size()));
+        Groups after = app.group().all();
+        assertThat(after, equalTo(before));
     }
 
 

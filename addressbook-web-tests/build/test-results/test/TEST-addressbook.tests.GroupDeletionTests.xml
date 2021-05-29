@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="addressbook.tests.GroupDeletionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-29T12:51:53" hostname="OPASNYI.local" time="0.709">
-  <properties/>
-  <testcase name="testGroupDeletion" classname="addressbook.tests.GroupDeletionTests" time="0.709"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -8,11 +8,11 @@ public class ContactDeletionTests extends TestBase{
 
     @Test (enabled = false)
     public void contactDeletionTests(){
-        if(!app.group().isThereAContact()){
-            app.group().createContact(new ContactData("RON", null, null));
+        if(!app.contact().isThereAContact()){
+            app.contact().createContact(new ContactData().withLastname("Baha"));
         }
-        app.group().selectContact();
-        app.group().deleteSelectedContact();
+        app.contact().selectContact();
+        app.contact().deleteSelectedContact();
         app.goTo().returnToHomePage();
     }
 }

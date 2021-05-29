@@ -7,7 +7,7 @@ public class ContactCreationTests extends TestBase {
 
     @Test (enabled = false)
     public void contactCreationTests() {
-        app.group().createContact(new ContactData("rrr",  "sss", "Bob"));
+        app.contact().createContact(new ContactData().withLastname("Joe"));
         app.goTo().returnToHomePage();
     }
 }

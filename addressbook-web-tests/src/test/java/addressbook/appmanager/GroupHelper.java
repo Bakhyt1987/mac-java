@@ -2,6 +2,7 @@ package addressbook.appmanager;
 
 import addressbook.model.ContactData;
 import addressbook.model.GroupData;
+import addressbook.model.Groups;
 import net.bytebuddy.agent.builder.AgentBuilder;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -10,9 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class GroupHelper extends HelperBase {
 
@@ -28,9 +27,7 @@ public class GroupHelper extends HelperBase {
         click(By.name("submit"));
     }
 
-    public void submitContactCreation() {
-        click(By.name("submit"));
-    }
+
 
     public void fillGroupForm(GroupData groupData) {
         type(By.name("group_name"), groupData.getName());
@@ -46,11 +43,7 @@ public class GroupHelper extends HelperBase {
         click(By.name("delete"));
     }
 
-    public void deleteSelectedContact() {
-        click(By.xpath("//input[@value='Delete']"));
-        Alert alert = driver.switchTo().alert();
-        alert.accept();
-    }
+
 
     private AgentBuilder.RawMatcher closeAlertAndGetItsText() {
         return null;
@@ -65,30 +58,22 @@ public class GroupHelper extends HelperBase {
     }
 
 
-    public void selectContact() {
-        click(By.name("selected[]"));
-    }
-
     public void initGroupModification() {
         click(By.name("edit"));
-    }
-
-    public void initContactModification() {
-        click(By.xpath("//img[@alt='Edit']"));
     }
 
     public void submitGroupModification() {
         click(By.name("update"));
     }
 
-    public void submitContactModification() {
-        click(By.xpath("(//input[@name='update'])[2]"));
-    }
+
+
 
     public void create(GroupData group) {
         initGroupCreation();
         fillGroupForm(group);
         submitGroupCreation();
+        groupCache = null;
         returnToGroupPage();
 
     }
@@ -98,76 +83,43 @@ public class GroupHelper extends HelperBase {
         initGroupModification();
         fillGroupForm(group);
         submitGroupModification();
+        groupCache = null;
         returnToGroupPage();
     }
 
     public void delete(GroupData group) {
         selectGroupById(group.getId());
         deleteSelectedGroup();
+        groupCache = null;
         returnToGroupPage();
     }
 
+    public int count() {
+        return driver.findElements(By.name("selected[]")).size();
+    }
 
     public boolean isThereAGroup() {
         return isElementPresent(By.name("selected[]"));
     }
 
-    public boolean isThereAContact() {
-        return isElementPresent(By.name("selected[]"));
-    }
 
 
-    public void createContact(ContactData contact) {
-        goToContactCreationForm();
-        fillContactForm(new ContactData(contact.getFirstname(), contact.getLastname(), contact.getGroup()), true);
-        submitContactCreation();
-
-    }
-
-    public void ContactModification(ContactData contact) {
-        selectContact();
-        initContactModification();
-        fillContactModification(new ContactData(contact.getFirstname(), contact.getLastname(), contact.getGroup()), false);
-        submitContactModification();
-    }
 
 
-    public void goToContactCreationForm() {
-        click(By.linkText("add new"));
-    }
+    private Groups groupCache = null;
 
-    public void fillContactForm(ContactData contactData, boolean creation) {
-        type(By.name("firstname"), contactData.getFirstname());
-        type(By.name("lastname"), contactData.getLastname());
-
-        if (creation) {
-            new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-        } else {
-            Assert.assertFalse(isElementPresent(By.name("new_group")));
+    public Groups all() {
+        if (groupCache != null) {
+            return new Groups(groupCache);
         }
-
-    }
-
-    public void fillContactModification(ContactData contactData, boolean creation) {
-        type(By.name("firstname"), contactData.getFirstname());
-        type(By.name("lastname"), contactData.getLastname());
-
-        if (creation) {
-            new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-        } else {
-            Assert.assertFalse(isElementPresent(By.name("new_group")));
-        }
-    }
-
-    public Set<GroupData> all() {
-        Set<GroupData> groups = new HashSet<GroupData>();
+        groupCache = new Groups();
         List<WebElement> elements = driver.findElements(By.cssSelector("span.group"));
         for (WebElement element : elements) {
             String name = element.getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-            groups.add(new GroupData().withId(id).withName(name));
+            groupCache.add(new GroupData().withId(id).withName(name));
         }
-        return groups;
+        return new Groups(groupCache);
     }
 
 

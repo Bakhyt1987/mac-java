@@ -7,10 +7,10 @@ public class ContactModificationTests extends TestBase{
 
     @Test (enabled = false)
     public void contactModificationTests(){
-        if(! app.group().isThereAContact()){
-            app.group().createContact(new ContactData("RON", "null", "Bob"));
+        if(! app.contact().isThereAContact()){
+            app.contact().createContact(new ContactData().withLastname("work"));
         }
-        app.group().ContactModification(new ContactData("2222", "null", null));
+        app.contact().ContactModification(new ContactData().withLastname("rick"));
         app.goTo().returnToHomePage();
     }
 }

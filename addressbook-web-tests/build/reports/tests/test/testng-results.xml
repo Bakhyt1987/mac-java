@@ -2,28 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-05-29T18:51:53 ALMT" name="Gradle suite" finished-at="2021-05-29T18:51:54 ALMT" duration-ms="1036">
+  <suite started-at="2021-05-30T02:15:30 ALMT" name="Gradle suite" finished-at="2021-05-30T02:15:30 ALMT" duration-ms="487">
     <groups>
     </groups>
-    <test started-at="2021-05-29T18:51:53 ALMT" name="Gradle test" finished-at="2021-05-29T18:51:54 ALMT" duration-ms="1036">
-      <class name="addressbook.tests.GroupDeletionTests">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:addressbook.tests.GroupDeletionTests@142b913e]" started-at="2021-05-29T18:51:49 ALMT" name="setUp" finished-at="2021-05-29T18:51:53 ALMT" duration-ms="3906" status="PASS">
+    <test started-at="2021-05-30T02:15:30 ALMT" name="Gradle test" finished-at="2021-05-30T02:15:30 ALMT" duration-ms="487">
+      <class name="addressbook.tests.ContactPhoneTests">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:addressbook.tests.ContactPhoneTests@3427519e]" started-at="2021-05-30T02:15:26 ALMT" name="setUp" finished-at="2021-05-30T02:15:30 ALMT" duration-ms="3915" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="ensurePreconditions()[pri:0, instance:addressbook.tests.GroupDeletionTests@142b913e]" started-at="2021-05-29T18:51:53 ALMT" name="ensurePreconditions" finished-at="2021-05-29T18:51:53 ALMT" duration-ms="303" status="PASS">
+        <test-method signature="testContactPhones()[pri:0, instance:addressbook.tests.ContactPhoneTests@3427519e]" started-at="2021-05-30T02:15:30 ALMT" name="testContactPhones" finished-at="2021-05-30T02:15:30 ALMT" duration-ms="464" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ensurePreconditions -->
-        <test-method signature="testGroupDeletion()[pri:0, instance:addressbook.tests.GroupDeletionTests@142b913e]" started-at="2021-05-29T18:51:53 ALMT" name="testGroupDeletion" finished-at="2021-05-29T18:51:54 ALMT" duration-ms="709" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGroupDeletion -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:addressbook.tests.GroupDeletionTests@142b913e]" started-at="2021-05-29T18:51:54 ALMT" name="tearDown" finished-at="2021-05-29T18:51:55 ALMT" duration-ms="546" status="PASS">
+        </test-method> <!-- testContactPhones -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:addressbook.tests.ContactPhoneTests@3427519e]" started-at="2021-05-30T02:15:30 ALMT" name="tearDown" finished-at="2021-05-30T02:15:31 ALMT" duration-ms="561" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- addressbook.tests.GroupDeletionTests -->
+      </class> <!-- addressbook.tests.ContactPhoneTests -->
     </test> <!-- Gradle test -->
   </suite> <!-- Gradle suite -->
 </testng-results>

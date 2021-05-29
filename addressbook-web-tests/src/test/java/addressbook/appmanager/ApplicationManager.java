@@ -1,5 +1,6 @@
 package addressbook.appmanager;
 
+import addressbook.model.ContactData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -15,6 +16,9 @@ public class ApplicationManager {
     public SessionHelper sessionHelper;
     public NavigationHelper navigationHelper;
     public GroupHelper groupHelper;
+    public ContactHelper contactHelper;
+
+
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -38,6 +42,7 @@ public class ApplicationManager {
         driver.get("http://localhost/addressbook/index.php");
         groupHelper = new GroupHelper(driver);
         navigationHelper = new NavigationHelper(driver);
+        contactHelper = new ContactHelper(driver);
         sessionHelper = new SessionHelper(driver);
         sessionHelper.login("admin", "secret");
     }
@@ -52,5 +57,9 @@ public class ApplicationManager {
 
     public NavigationHelper goTo() {
         return navigationHelper;
+    }
+
+    public ContactHelper contact() {
+        return contactHelper;
     }
 }

@@ -35,4 +35,13 @@ public class NavigationHelper  extends HelperBase {
         }
         click(By.linkText("home"));
     }
+
+    public void goToHomePage() {
+        if (!isElementPresent(By.tagName("h1"))
+                || !driver.findElement(By.tagName("h1")).getText().equals("Address book"))
+            return;
+        {
+            click(By.linkText("home"));
+        }
+    }
 }
