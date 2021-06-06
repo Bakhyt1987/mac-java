@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-05-30T02:15:30 ALMT" name="Gradle suite" finished-at="2021-05-30T02:15:30 ALMT" duration-ms="487">
+  <suite started-at="2021-06-07T04:31:09 ALMT" name="Gradle suite" finished-at="2021-06-07T04:31:10 ALMT" duration-ms="1302">
     <groups>
     </groups>
-    <test started-at="2021-05-30T02:15:30 ALMT" name="Gradle test" finished-at="2021-05-30T02:15:30 ALMT" duration-ms="487">
-      <class name="addressbook.tests.ContactPhoneTests">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:addressbook.tests.ContactPhoneTests@3427519e]" started-at="2021-05-30T02:15:26 ALMT" name="setUp" finished-at="2021-05-30T02:15:30 ALMT" duration-ms="3915" status="PASS">
+    <test started-at="2021-06-07T04:31:09 ALMT" name="Gradle test" finished-at="2021-06-07T04:31:10 ALMT" duration-ms="1302">
+      <class name="addressbook.tests.ContactCreationTests">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:addressbook.tests.ContactCreationTests@347fd1f6]" started-at="2021-06-07T04:31:05 ALMT" name="setUp" finished-at="2021-06-07T04:31:09 ALMT" duration-ms="4096" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testContactPhones()[pri:0, instance:addressbook.tests.ContactPhoneTests@3427519e]" started-at="2021-05-30T02:15:30 ALMT" name="testContactPhones" finished-at="2021-05-30T02:15:30 ALMT" duration-ms="464" status="PASS">
+        <test-method signature="contactCreationTests()[pri:0, instance:addressbook.tests.ContactCreationTests@347fd1f6]" started-at="2021-06-07T04:31:09 ALMT" name="contactCreationTests" finished-at="2021-06-07T04:31:10 ALMT" duration-ms="1277" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testContactPhones -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:addressbook.tests.ContactPhoneTests@3427519e]" started-at="2021-05-30T02:15:30 ALMT" name="tearDown" finished-at="2021-05-30T02:15:31 ALMT" duration-ms="561" status="PASS">
+        </test-method> <!-- contactCreationTests -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:addressbook.tests.ContactCreationTests@347fd1f6]" started-at="2021-06-07T04:31:10 ALMT" name="tearDown" finished-at="2021-06-07T04:31:11 ALMT" duration-ms="563" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- addressbook.tests.ContactPhoneTests -->
+      </class> <!-- addressbook.tests.ContactCreationTests -->
     </test> <!-- Gradle test -->
   </suite> <!-- Gradle suite -->
 </testng-results>

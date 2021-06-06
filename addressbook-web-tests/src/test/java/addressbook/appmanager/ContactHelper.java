@@ -46,7 +46,7 @@ public class ContactHelper extends HelperBase {
 
     public void createContact(ContactData contact) {
         goToContactCreationForm();
-        fillContactForm(contact,true);
+        fillContactForm(contact, true);
         submitContactCreation();
 
 
@@ -67,13 +67,15 @@ public class ContactHelper extends HelperBase {
     public void fillContactForm(ContactData contactData, boolean creation) {
         type(By.name("firstname"), contactData.getFirstname());
         type(By.name("lastname"), contactData.getLastname());
-
+        attach(By.name("photo"), contactData.getPhoto());
         if (creation) {
-            new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-        } else {
-            Assert.assertFalse(isElementPresent(By.name("new_group")));
-        }
+            if (contactData.getGroup() != null) {
+                new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+            } else {
+                Assert.assertFalse(isElementPresent(By.name("new_group")));
+            }
 
+        }
     }
 
     public void fillContactModification(ContactData contactData, boolean creation) {
@@ -81,13 +83,13 @@ public class ContactHelper extends HelperBase {
         type(By.name("lastname"), contactData.getLastname());
 
         if (creation) {
-            new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-        } else {
-            Assert.assertFalse(isElementPresent(By.name("new_group")));
+            if (contactData.getGroup() != null) {
+                new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+            } else {
+                Assert.assertFalse(isElementPresent(By.name("new_group")));
+            }
         }
     }
-
-
 
     public Set<ContactData> all() {
         Set<ContactData> contacts = new HashSet<ContactData>();
@@ -97,15 +99,15 @@ public class ContactHelper extends HelperBase {
             int id = Integer.parseInt(cells.get(0).findElement(By.tagName("input")).getAttribute("value"));
             String lastname = cells.get(1).getText();
             String firstname = cells.get(2).getText();
-            String[] phones = cells.get(5).getText().split("\n");
+            String allPhones = cells.get(5).getText();
             contacts.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname)
-                    .withHomePhone(phones[0]).withMobilePhone(phones[1]).withWorkPhone(phones[2]));
+                    .withAllPhones(allPhones));
         }
         return contacts;
     }
 
     public ContactData infoFromEditForm(ContactData contact) {
-        initContactModificationById(contact.getId());
+        //initContactModificationById(contact.getId());
         String firstname = driver.findElement(By.name("firstname")).getAttribute("value");
         String lastname = driver.findElement(By.name("lastname")).getAttribute("value");
         String home = driver.findElement(By.name("home")).getAttribute("value");
@@ -121,5 +123,9 @@ public class ContactHelper extends HelperBase {
         WebElement row = checkbox.findElement(By.xpath("./../.."));
         List<WebElement> cells = row.findElements(By.tagName("td"));
         cells.get(7).findElement(By.tagName("a")).click();
+    }
+
+    public void initContactCreation() {
+        click(By.linkText("add new"));
     }
 }

@@ -1,29 +1,29 @@
 addressbook/model/GroupData.java
  addressbook.model.GroupData
-addressbook/appmanager/HelperBase.java
- addressbook.appmanager.HelperBase
-addressbook/appmanager/NavigationHelper.java
- addressbook.appmanager.NavigationHelper
-addressbook/appmanager/SessionHelper.java
- addressbook.appmanager.SessionHelper
-addressbook/model/Contacts.java
- addressbook.model.Contacts
-addressbook/appmanager/GroupHelper.java
- addressbook.appmanager.GroupHelper
 addressbook/model/Groups.java
  addressbook.model.Groups
 addressbook/model/ContactData.java
  addressbook.model.ContactData
-addressbook/tests/TestBase.java
- addressbook.tests.TestBase
+addressbook/model/Contacts.java
+ addressbook.model.Contacts
 addressbook/appmanager/ApplicationManager.java
  addressbook.appmanager.ApplicationManager
-addressbook/tests/ContactCreationTests.java
- addressbook.tests.ContactCreationTests
-addressbook/tests/GroupModificationTests.java
- addressbook.tests.GroupModificationTests
+addressbook/appmanager/NavigationHelper.java
+ addressbook.appmanager.NavigationHelper
 addressbook/tests/GroupCreationTests.java
  addressbook.tests.GroupCreationTests
+addressbook/appmanager/GroupHelper.java
+ addressbook.appmanager.GroupHelper
+addressbook/appmanager/SessionHelper.java
+ addressbook.appmanager.SessionHelper
+addressbook/tests/TestBase.java
+ addressbook.tests.TestBase
+addressbook/appmanager/HelperBase.java
+ addressbook.appmanager.HelperBase
+addressbook/tests/ContactPhoneTests.java
+ addressbook.tests.ContactPhoneTests
+addressbook/tests/GroupModificationTests.java
+ addressbook.tests.GroupModificationTests
 addressbook/tests/ContactDeletionTests.java
  addressbook.tests.ContactDeletionTests
 addressbook/appmanager/ContactHelper.java
@@ -32,5 +32,5 @@ addressbook/tests/ContactModificationTests.java
  addressbook.tests.ContactModificationTests
 addressbook/tests/GroupDeletionTests.java
  addressbook.tests.GroupDeletionTests
-addressbook/tests/ContactPhoneTests.java
- addressbook.tests.ContactPhoneTests
+addressbook/tests/ContactCreationTests.java
+ addressbook.tests.ContactCreationTests

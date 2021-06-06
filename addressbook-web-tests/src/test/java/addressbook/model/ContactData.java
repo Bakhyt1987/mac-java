@@ -1,18 +1,30 @@
 package addressbook.model;
 
 
-
+import java.io.File;
 import java.util.Objects;
 
 public class ContactData {
 
-    private  int id = Integer.MAX_VALUE;
+    private int id;
     private String firstname;
     private String lastname;
     private String group;
-    private String home;
-    private String mobile;
-    private String work;
+    private String homePhone;
+    private String mobilePhone;
+    private String workPhone;
+    private String allPhones;
+    private File photo;
+
+    public ContactData withPhoto(File photo) {
+        this.photo = photo;
+        return this;
+    }
+
+    public ContactData withAllPhones(String allPhones) {
+        this.allPhones = allPhones;
+        return this;
+    }
 
     public ContactData withId(int id) {
         this.id = id;
@@ -29,18 +41,18 @@ public class ContactData {
         return this;
     }
 
-    public ContactData withHomePhone(String home) {
-        this.home = home;
+    public ContactData withHomePhone(String homePhone) {
+        this.homePhone = homePhone;
         return this;
     }
 
-    public ContactData withMobilePhone(String mobile) {
-        this.mobile = mobile;
+    public ContactData withMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
         return this;
     }
 
-    public ContactData withWorkPhone(String work) {
-        this.work = work;
+    public ContactData withWorkPhone(String workPhone) {
+        this.workPhone = workPhone;
         return this;
     }
 
@@ -49,22 +61,28 @@ public class ContactData {
         return this;
     }
 
+    public File getPhoto() {
+        return photo;
+    }
 
+    public String getAllPhones() {
+        return allPhones;
+    }
 
     public int getId() {
         return id;
     }
 
     public String getHomePhone() {
-        return home;
+        return homePhone;
     }
 
     public String getMobilePhone() {
-        return mobile;
+        return mobilePhone;
     }
 
     public String getWorkPhone() {
-        return work;
+        return workPhone;
     }
 
     public String getFirstname() {
