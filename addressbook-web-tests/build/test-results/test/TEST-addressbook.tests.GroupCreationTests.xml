@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="addressbook.tests.GroupCreationTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-06-10T07:47:53" hostname="OPASNYI.local" time="20.739">
+  <properties/>
+  <testcase name="testGroupCreation[0](GroupData{id='2147483647', name='test 0'})" classname="addressbook.tests.GroupCreationTests" time="9.993"/>
+  <testcase name="testGroupCreation[1](GroupData{id='2147483647', name='test 1'})" classname="addressbook.tests.GroupCreationTests" time="5.232"/>
+  <testcase name="testGroupCreation[2](GroupData{id='2147483647', name='test 2'})" classname="addressbook.tests.GroupCreationTests" time="5.511"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

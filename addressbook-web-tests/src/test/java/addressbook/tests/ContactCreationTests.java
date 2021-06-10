@@ -26,4 +26,5 @@ public class ContactCreationTests extends TestBase {
 //        System.out.println(photo.getAbsolutePath());
 //        System.out.println(photo.exists());
 //    }
+
 }
