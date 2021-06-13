@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="addressbook-web-tests_main" target="15" />
+      <module name="addressbook-web-tests_test" target="15" />
+      <module name="sandbox" target="15" />
+      <module name="sandbox.main" target="15" />
+      <module name="sandbox.test" target="15" />
+      <module name="sandbox_main" target="15" />
+      <module name="sandbox_test" target="15" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
