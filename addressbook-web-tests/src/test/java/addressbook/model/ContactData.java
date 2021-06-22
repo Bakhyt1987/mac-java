@@ -24,7 +24,7 @@ public class ContactData {
     private String lastname;
 
     @Transient
-    private String group;
+    private String groups;
 
 
     @Column(name = "home")
@@ -87,8 +87,8 @@ public class ContactData {
         return this;
     }
 
-    public ContactData withGroup(String group) {
-        this.group = group;
+    public ContactData withGroup(String groups) {
+        this.groups = groups;
         return this;
     }
 
@@ -124,9 +124,11 @@ public class ContactData {
         return lastname;
     }
 
-    public String getGroup() {
-        return group;
+    public String getGroups() {
+        return groups;
     }
+
+
 
     @Override
     public String toString() {
@@ -152,5 +154,8 @@ public class ContactData {
         return Objects.hash(id, firstname, lastname);
     }
 
-
+    public ContactData inGroup(GroupData group) {
+        //groups.add(group);
+        return this;
+    }
 }

@@ -11,7 +11,7 @@ public class ContactModificationTests extends TestBase{
             app.contact().createContact(new ContactData().withLastname("work"));
         }
         app.contact().ContactModification(new ContactData().withLastname("rick"));
-        app.goTo().returnToHomePage();
+        app.goTo().gotoHomePage();
     }
 }
 

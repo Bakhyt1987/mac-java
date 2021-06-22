@@ -9,7 +9,7 @@ public class NavigationHelper  extends HelperBase {
         super(driver);
     }
 
-    public void GroupPage() {
+    public void groupPage() {
         if (isElementPresent(By.tagName("h1"))
                 && driver.findElement(By.tagName("h1")).getText().equals("Groups")
                 && isElementPresent(By.name("new")))
@@ -19,29 +19,11 @@ public class NavigationHelper  extends HelperBase {
         }
     }
 
-    public void returnToGroupPage() {
-        if (isElementPresent(By.tagName("h1"))
-                && driver.findElement(By.tagName("h1")).getText().equals("Groups")
-                && isElementPresent(By.name("new")))
-            return;
-        {
-            click(By.linkText("groups"));
-        }
-    }
-
-    public void returnToHomePage(){
-        if(isElementPresent(By.id("maintable"))){
+    public void gotoHomePage() {
+        if (isElementPresent(By.id("maintable"))) {
             return;
         }
         click(By.linkText("home"));
     }
 
-    public void goToHomePage() {
-        if (!isElementPresent(By.tagName("h1"))
-                || !driver.findElement(By.tagName("h1")).getText().equals("Address book"))
-            return;
-        {
-            click(By.linkText("home"));
-        }
-    }
 }

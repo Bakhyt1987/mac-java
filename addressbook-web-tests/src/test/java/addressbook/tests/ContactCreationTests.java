@@ -1,6 +1,7 @@
 package addressbook.tests;
 
 import addressbook.model.ContactData;
+import addressbook.model.Groups;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -8,14 +9,16 @@ import java.io.File;
 public class ContactCreationTests extends TestBase {
 
     @Test
-    public void contactCreationTests() {
-        app.goTo().goToHomePage();
+    public void testContactCreation() {
+        Groups groups = app.db().groups();
+        File photo = new File("src/test/resources/stru.png");
+        ContactData newContact = new ContactData().withFirstname("test_name").withLastname("test_surname").withPhoto(photo)
+                .inGroup(groups.iterator().next());
+        app.goTo().gotoHomePage();
         app.contact().initContactCreation();
-        File photo = new File("src/test/resources/Baha.png");
-        app.contact().fillContactForm(
-                new ContactData().withFirstname("test_name1").withLastname("test_surname1").withGroup("test1").withPhoto(photo),true);
+        app.contact().fillContactForm(newContact, true);
         app.contact().submitContactCreation();
-        app.goTo().returnToHomePage();
+        app.contact().returnToHomePage();
     }
 
 //    @Test

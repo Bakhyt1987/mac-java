@@ -1,15 +1,11 @@
 package addressbook.appmanager;
 
-import addressbook.model.ContactData;
 import addressbook.model.GroupData;
 import addressbook.model.Groups;
 import net.bytebuddy.agent.builder.AgentBuilder;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import java.util.List;
 

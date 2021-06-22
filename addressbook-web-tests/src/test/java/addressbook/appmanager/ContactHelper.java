@@ -69,8 +69,8 @@ public class ContactHelper extends HelperBase {
         type(By.name("lastname"), contactData.getLastname());
         attach(By.name("photo"), contactData.getPhoto());
         if (creation) {
-            if (contactData.getGroup() != null) {
-                new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+            if (contactData.getGroups() != null) {
+                new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroups());
             } else {
                 Assert.assertFalse(isElementPresent(By.name("new_group")));
             }
@@ -83,8 +83,8 @@ public class ContactHelper extends HelperBase {
         type(By.name("lastname"), contactData.getLastname());
 
         if (creation) {
-            if (contactData.getGroup() != null) {
-                new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+            if (contactData.getGroups() != null) {
+                new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroups());
             } else {
                 Assert.assertFalse(isElementPresent(By.name("new_group")));
             }
@@ -127,5 +127,9 @@ public class ContactHelper extends HelperBase {
 
     public void initContactCreation() {
         click(By.linkText("add new"));
+    }
+
+    public void returnToHomePage() {
+        click(By.linkText("home page"));
     }
 }
